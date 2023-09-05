@@ -26,7 +26,7 @@ class Matrix:
              return Matrix([[self._matr[i][j] + other._matr[i][j] for j in range(len(self._matr[0]))] for i in range(len(self._matr))])
 
      def __mul__(self, other):
-         if len(self._matr[0]) != len(other._matr):
+         if len(self._matr) != len(other._matr):
              return f'Error: невозможно перемножить матрицы'
          else:
              new_matr = [[sum(i * j for i, j in zip(i_row, j_col)) for j_col in zip(*other._matr)] for i_row in self._matr]
@@ -51,7 +51,7 @@ class Matrix:
 a1 = [[9, 8, 7], [6, 5, 4], [3, 2, 1]] 
 a2 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]] 
 a3 = [1, 2, 4, 5, 0], [5, 6, 8, 0, 0], [5, 0, -7, 1, 0]
-a4 = [1, 2, 4], [5, 6,  8], [2, 5, -2],[10, 5, 0]
+a4 = [1, 2, 4], [5, 6,  8], [2, 5, -2]
 
 
 m_1 = Matrix(a1)
@@ -72,3 +72,4 @@ print ("Умножение матриц:")
 matrix_mul = m_1 * m_3
 print(matrix_mul)
 print(m_1 * m_4)
+
